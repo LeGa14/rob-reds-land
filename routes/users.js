@@ -12,4 +12,13 @@ router.get('/', (req, res) => {
   })
 })
 
+router.get('/:id', (req, res) => {
+  const user = UserModel.findById(req.params.id).then((user) => {
+
+    res.send({
+      user
+    })
+  })
+})
+
 module.exports = router;

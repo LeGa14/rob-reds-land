@@ -19,22 +19,32 @@ const gunCard = new CardModel({
     characterId: "something"
 })
 const zer0 = new CharacterModel({
-    class: "soldier",
+    class: "assassin",
     name: "zer0",
     cash: 5000,
     image: "https://www.placecage.com/g/300/300"
 })
-const gamer = new UserModel({
+const playerOne = new UserModel({
     username: "cardGamer",
     email: "borderlands@fan.com",
     password: "letsrobred",
     image: "https://www.placecage.com/c/250/250",
     characters: [zer0],
     cards: [gunCard]
-
+})
+const playerTwo = new UserModel({
+    username: "gamerOfCards",
+    email: "fan@borderlands.com",
+    password: "iwannarobred",
+    image: "https://www.placecage.com/c/225/225",
+    characters: [],
+    cards: []
 })
 
+
 UserModel.remove({})
-    .then(() => gamer.save())
-    .then(() => console.log('Successful Save Point'))
+    .then(() => playerOne.save())
+    .then(() => console.log('Player One Saved'))
+    .then(() => playerTwo.save())
+    .then(() => console.log('Player Two Saved'))
     .then(() => mongoose.connection.close())

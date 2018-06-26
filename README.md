@@ -227,3 +227,5 @@ User plays game
 
 
 I'm trying to seed my database. The code appears correct, but there might be a syntax error somewhere. The terminal tells me I have an invalid schema. idk. I want to check the legitimacy of the way to import models from another file. I WILL SEED!!!
+
+I seeded the database thnks to spotting an error 
