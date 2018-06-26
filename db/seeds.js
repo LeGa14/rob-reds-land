@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
-        console.log("There somebody READY to ROB RED'S LAND")
+        console.log("There's somebody READY to ROB RED'S LAND")
     })
 .catch((err) => {
     console.log('ERROR', err)
