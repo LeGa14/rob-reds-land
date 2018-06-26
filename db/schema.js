@@ -18,13 +18,17 @@ const CharacterSchema = new Schema({
     },
     name: {
         type: String,
-        default: "Axton"
+        default: "Axton",
+        uninque: true
     },
     health: {
         type: Number,
         default: 100
     },
-    cash: Number,
+    cash: {
+        type:Number,
+        default: 0
+    },
     deployed: {
         type: Boolean,
         default: false
@@ -38,11 +42,13 @@ const CharacterSchema = new Schema({
 const UserSchema = new Schema({
     username: {
         type: String,
-        default: "userName"
+        default: "userName",
+        unique: true
     },
     email: {
         type: String,
-        default: "someone@somewhere.com"
+        default: "someone@somewhere.com",
+        unique: true
     },
     password: {
         type: String,
