@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 // SCHEMAS
-
 const CharacterSchema = new Schema({
     userId: {
         type: String,
@@ -29,6 +28,12 @@ const CharacterSchema = new Schema({
     },
 })
 
+const CardSchema = new Schema({
+    cardType: String,
+    image: String,
+    characterId: String
+})
+
 
 const UserSchema = new Schema({
     username: {
@@ -47,13 +52,16 @@ const UserSchema = new Schema({
         type: String,
         default: "https://www.placecage.com/c/400/400"
     },
+    characters: [ CharacterModel ]
 })
 
 // MODELS
 const UserModel = mongoose.model("User", UserSchema)
 const CharacterModel = mongoose.model("Character", CharacterSchema)
+const CardModel = mongoose.model("Card", CardSchema)
 
 module.exports = {
     UserModel,
-    CharacterModel
+    CharacterModel,
+    CardModel
 }
