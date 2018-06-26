@@ -121,6 +121,9 @@ User opens app
                         User chooses how to handle Character's inventory
                             User sells inventory for cash
                             User stores in inventory in bank universal to all their characters
+                        User choses what to do with Character's money
+                            User gives money to other characters
+                            User stores amount in personal bank
                     User creates new character      (CREATE/NEW) - C
                         User selects Character class
                         User gives Charcter name
@@ -221,3 +224,6 @@ User plays game
             submit username
             submit email
             submit password
+
+
+I'm trying to seed my database. The code appears correct, but there might be a syntax error somewhere. The terminal tells me I have an invalid schema. idk. I want to check the legitimacy of the way to import models from another file. I WILL SEED!!!

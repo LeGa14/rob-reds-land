@@ -5,8 +5,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
 const mongoose = require('mongoose')
-mongoose.Promise = global.Promise
-mongoose.connect(process.env.MONGODB_URI) //mongodb://localhost/rob-reds-land
+   mongoose.connect(process.env.MONGODB_URI) //mongodb://localhost/rob-reds-land
 
 const connection = mongoose.connection
 connection.on('connected', () => {
@@ -32,7 +31,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/client/build/index.html')
 })
 
-app.use('/', indexRouter)
-app.use('/users', usersRouter)
+app.use('api/users', usersRouter)
 
 module.exports = app

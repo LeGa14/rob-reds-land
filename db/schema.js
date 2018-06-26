@@ -3,11 +3,15 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 // SCHEMAS
+const CardSchema = new Schema({
+    cardType: String,
+    image: String,
+    characterId: String
+})
+
+
+
 const CharacterSchema = new Schema({
-    userId: {
-        type: String,
-        default: "0000000"
-    },
     class: {
         type: String,
         default: "soldier"
@@ -16,24 +20,20 @@ const CharacterSchema = new Schema({
         type: String,
         default: "Axton"
     },
-    health: Number,
+    health: {
+        type: Number,
+        default: 100
+    },
     cash: Number,
     deployed: {
         type: Boolean,
-        default: false    
+        default: false
     },
     image: {
         type: String,
         default: "https://www.placecage.com/c/200/200"
-    },
+    }
 })
-
-const CardSchema = new Schema({
-    cardType: String,
-    image: String,
-    characterId: String
-})
-
 
 const UserSchema = new Schema({
     username: {
@@ -52,7 +52,8 @@ const UserSchema = new Schema({
         type: String,
         default: "https://www.placecage.com/c/400/400"
     },
-    characters: [ CharacterModel ]
+    characters: [CharacterSchema],
+    cards: [CardSchema]
 })
 
 // MODELS
@@ -61,7 +62,7 @@ const CharacterModel = mongoose.model("Character", CharacterSchema)
 const CardModel = mongoose.model("Card", CardSchema)
 
 module.exports = {
-    UserModel,
+    CardModel,
     CharacterModel,
-    CardModel
+    UserModel
 }
