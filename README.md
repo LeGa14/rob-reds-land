@@ -118,6 +118,9 @@ User opens app
                             *shield
                             perks
                     User deletes single character   (DELETE) - D
+                        User chooses how to handle Character's inventory
+                            User sells inventory for cash
+                            User stores in inventory in bank universal to all their characters
                     User creates new character      (CREATE/NEW) - C
                         User selects Character class
                         User gives Charcter name
@@ -186,7 +189,8 @@ Assistance Cards
 User
     username: string
     email: string
-    password:
+    password: string
+    image: sting
     Character
         user:  string
         class: string
@@ -197,13 +201,13 @@ User
         deployed: boolean
         image: string
     Cards
-        type: cash, weapon, assistance
-        owner: User
-        holder: Character
+        type: "cash/weapon/assistance"
+        image: string
+        holder: Character/Bank
 
 Board:
     spaces:
-    
+
     start:
     end:
 

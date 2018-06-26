@@ -4,18 +4,18 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
-const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/rob-reds-land
+const mongoose = require('mongoose')
+mongoose.Promise = global.Promise
+mongoose.connect(process.env.MONGODB_URI) //mongodb://localhost/rob-reds-land
 
-const connection = mongoose.connection;
+const connection = mongoose.connection
 connection.on('connected', () => {
-    console.log('Mongoose Connected Successfully');
-});
+    console.log('Mongoose Connected Successfully')
+})
 // If the connection throws an error
 connection.on('error', (err) => {
-    console.log('Mongoose default connection error: ' + err);
-});
+    console.log('Mongoose default connection error: ' + err)
+})
 
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
