@@ -18,6 +18,7 @@ connection.on('error', (err) => {
 
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
+const charactersRouter = require('./routes/characters')
 
 const app = express()
 
@@ -32,5 +33,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/users', usersRouter)
+app.use('/api/users/:userId/characters', charactersRouter)
 
 module.exports = app
