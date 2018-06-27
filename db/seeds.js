@@ -18,6 +18,12 @@ const gunCard = new CardModel({
     image: "http://fillmurray.com/g/200/300",
     characterId: "something"
 })
+const sirenMaya = new CharacterModel({
+    class: "siren",
+    name: "Maya",
+    cash: 500000,
+    image: "https://www.placecage.com/g/200/200"
+})
 const zer0 = new CharacterModel({
     class: "assassin",
     name: "zer0",
@@ -29,7 +35,7 @@ const playerOne = new UserModel({
     email: "borderlands@fan.com",
     password: "letsrobred",
     image: "https://www.placecage.com/c/250/250",
-    characters: [zer0],
+    characters: [zer0, sirenMaya],
     cards: [gunCard]
 })
 const playerTwo = new UserModel({
