@@ -30,6 +30,32 @@ router.post('/', (req, res) => {
   }).catch((err) => res.send(err))
 })
 
+// UPDATE USER
+router.patch('/:id', (req, res) => {
+  console.log(`The current User: ---${req.params.id}--- is being altered`)
+  UserModel.findByIdAndUpdate(req.params.id)
+  .then((editedUser) => {
+    console.log(editedUser)
+    // const editedUser = new UserModel({})
+    editedUser.username = req.body.username
+    editedUser.email = req.body.email
+    editedUser.password = req.body.password
+    editedUser.image = req.body.image
+    return editedUser.save()
+  }).then((newStateOfUsers) => {
+    res.send(newStateOfUsers)
+  })
+})
+// router.post('/', (req, res) => {
+//   console.log(req.params.userId)
+//   User.findById(req.params.userId).then((user) => {
+//     const newIdea = new Idea({})
+//     user.ideas.push(newIdea)
+//     return user.save()
+//   }).then((savedUser) => {
+//     res.send(savedUser)
+//   })
+// })
 // DELETE USER
 router.delete('/:id', (req, res) => {
   UserModel.findByIdAndRemove(req.params.id)
@@ -39,7 +65,6 @@ router.delete('/:id', (req, res) => {
     res.send(newStateOfUsers)
   })
 })
-// UserModel.find
 module.exports = router;
 
 
