@@ -7,7 +7,7 @@ const router = express.Router({ mergeParams: true })
 
 // userRouter.use('/users/:userId/characters', router)
 
-/* GET users listing. */
+// INDEX CHARACTERs
 router.get('/', (req, res) => {
   // UserModel.find().then((users) => {
   console.log('The User ID is...')
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
     })
 })
 
-// SHOW a single USER
+// SHOW a single CHARACTER
 router.get('/:characterId', (req, res) => {
   const user = UserModel.findById(req.params.userId)
     .then((user) => {
@@ -39,13 +39,25 @@ router.get('/:characterId', (req, res) => {
     })
 })
 
-// //NEW USER
-// router.post('/', (req, res) => {
-//   const newUser = new UserModel(req.body)
-//   newUser.save().then((user) => {
-//     res.send({ user })
-//   }).catch((err) => res.send(err))
-// })
+//CREATE CHARACTER
+router.post('/', (req, res) => {
+  const newChar = new CharacterModel(req.body)
+  newChar.save()
+    .then((character) => {
+      UserModel.findById(req.params.userId)
+        .then((user) => {
+          user.characters.push(newChar)
+          return user.save()
+            .then((newStateOfUser) => {
+              res.send({ newStateOfUser })
+            })
+        })
+    })
+})
+
+// newUser.save().then((user) => {
+//   res.send({ user })
+// }).catch((err) => res.send(err))
 
 // // UPDATE USER
 // router.patch('/:id', (req, res) => {
