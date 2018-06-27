@@ -27,15 +27,17 @@ router.get('/', (req, res) => {
     })
 })
 
-// // SHOW a single USER
-// router.get('/:id', (req, res) => {
-//   const user = UserModel.findById(req.params.id).then((user) => {
-
-//     res.send({
-//       user
-//     })
-//   })
-// })
+// SHOW a single USER
+router.get('/:characterId', (req, res) => {
+  const user = UserModel.findById(req.params.userId)
+    .then((user) => {
+      user = user
+      foundCharacter = user.characters.id(req.params.characterId)
+      res.send({
+        foundCharacter
+      })
+    })
+})
 
 // //NEW USER
 // router.post('/', (req, res) => {

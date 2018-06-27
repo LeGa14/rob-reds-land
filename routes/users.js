@@ -3,7 +3,7 @@ var router = express.Router();
 
 const { UserModel } = require('../db/schema')
 
-/* GET users listing. */
+/* INDEX users listing. */
 router.get('/', (req, res) => {
   UserModel.find().then((users) => {
     res.send({

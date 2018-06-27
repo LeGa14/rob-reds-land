@@ -43,7 +43,7 @@ const playerTwo = new UserModel({
     email: "fan@borderlands.com",
     password: "iwannarobred",
     image: "https://www.placecage.com/c/225/225",
-    characters: [],
+    characters: [ sirenMaya],
     cards: []
 })
 
