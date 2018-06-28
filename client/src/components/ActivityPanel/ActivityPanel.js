@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SplashScreen from './SplashScreen'
+import About from './About'
 
 class ActivityPanel extends Component {
     render() {
@@ -7,6 +8,7 @@ class ActivityPanel extends Component {
             <div>
                 <h2>Hello from the ActivityPanel Component</h2>
                 <SplashScreen />
+                <About />
             </div>
         )
     }
