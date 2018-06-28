@@ -4,6 +4,7 @@ import SplashScreen from './ActivityPanel/SplashScreen'
 import About from './ActivityPanel/About'
 import LogIn from './ActivityPanel/LogIn'
 import User from './ActivityPanel/User'
+import Game from './ActivityPanel/Game'
 
 class ActivityPanel extends Component {
     render() {
@@ -14,6 +15,7 @@ class ActivityPanel extends Component {
                 <About />
                 <LogIn />
                 <User />
+                <Game />
             </div>
         )
     }
