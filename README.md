@@ -229,3 +229,14 @@ User plays game
 I'm trying to seed my database. The code appears correct, but there might be a syntax error somewhere. The terminal tells me I have an invalid schema. idk. I want to check the legitimacy of the way to import models from another file. I WILL SEED!!!
 
 I seeded the database thnks to spotting an error 
+
+I'm still working on the back-end. I managed to get the correct functionality for the Character Model's show and index routes
+
+Back-end completed!!!
+All necessary routes have been coded and tested for all 3 models. More models may make their way into the equation and different relationships may be established, but... we'll cross that bridge when we come to it.
+
+Next, I wanna set up the user experience in terms of component structure. I figure I'll do that from "in-media-res" format as opposed to a top-down or bottom-up approach. 
+
+--Go back to styling the navBar.
+--Establish Links within the NavBar
+--
