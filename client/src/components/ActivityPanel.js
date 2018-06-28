@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import SplashScreen from './SplashScreen'
-import About from './About'
+import SplashScreen from './ActivityPanel/SplashScreen'
+import About from './ActivityPanel/About'
 
 class ActivityPanel extends Component {
     render() {

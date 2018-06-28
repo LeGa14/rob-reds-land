@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 
-import Header from './Header'
-import UserStatus from './UserStatus'
-import Links from './Links'
+import Header from './NavigationBar/Header'
+import UserStatus from './NavigationBar/UserStatus'
+import Links from './NavigationBar/Links'
 
 const NavStructure = styled.div`
 div.NavParts {
@@ -25,14 +25,14 @@ class NavigationBar extends Component {
     render() {
         return (
             <div className="NavigationBar">
-            <NavStructure className="NavParts">
-                <h2>Hello from the NavigationBar Component</h2>
-                <div className="NavComponents">
-                    <Header />
-                    <Links />
-                    <UserStatus />
-                </div>
-            </NavStructure>
+                <NavStructure className="NavParts">
+                    <h2>Hello from the NavigationBar Component</h2>
+                    <div className="NavComponents">
+                        <Header />
+                        <Links />
+                        <UserStatus />
+                    </div>
+                </NavStructure>
             </div>
         );
     }
