@@ -39,4 +39,20 @@ router.get('/:cardId', (req, res) => {
     })
 })
 
+//CREATE CARD
+router.post('/', (req, res) => {
+  const newChar = new CardModel(req.body)
+  newChar.save()
+    .then((card) => {
+      UserModel.findById(req.params.userId)
+        .then((user) => {
+          user.cards.push(newChar)
+          return user.save()
+            .then((newStateOfUser) => {
+              res.send({ newStateOfUser })
+            })
+        })
+    })
+})
+
 module.exports = router
