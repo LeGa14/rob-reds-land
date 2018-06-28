@@ -27,4 +27,16 @@ router.get('/', (req, res) => {
     })
 })
 
+// SHOW a single CARD
+router.get('/:cardId', (req, res) => {
+  const user = UserModel.findById(req.params.userId)
+    .then((user) => {
+      user = user
+      foundCard = user.cards.id(req.params.cardId)
+      res.send({
+        foundCard
+      })
+    })
+})
+
 module.exports = router
