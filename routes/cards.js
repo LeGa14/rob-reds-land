@@ -55,4 +55,16 @@ router.post('/', (req, res) => {
     })
 })
 
+// DELETE CARD
+router.delete('/:cardId', (req, res) => {
+  UserModel.findById(req.params.userId)
+  .then((user) => {
+    user.cards.id(req.params.cardId).remove()
+    return user.save()
+  })
+  .then((savedUser) => {
+    res.send({user: savedUser})
+  })
+})
+
 module.exports = router
