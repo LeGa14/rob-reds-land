@@ -6,7 +6,7 @@ import Cards from './User/Cards'
 class User extends Component {
     render() {
         return(
-            <div>
+            <div className="component">
                 <h3>Hello from the User Component</h3>
                 <Characters />
                 <Cards />

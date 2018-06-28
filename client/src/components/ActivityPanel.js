@@ -9,7 +9,7 @@ import Game from './ActivityPanel/Game'
 class ActivityPanel extends Component {
     render() {
         return (
-            <div>
+            <div className="component">
                 <h2>Hello from the ActivityPanel Component</h2>
                 <SplashScreen />
                 <About />

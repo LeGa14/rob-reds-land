@@ -24,7 +24,7 @@ div.NavComponents {
 class NavigationBar extends Component {
     render() {
         return (
-            <div className="NavigationBar">
+            <div className="NavigationBar component">
                 <NavStructure className="NavParts">
                     <h2>Hello from the NavigationBar Component</h2>
                     <div className="NavComponents">
