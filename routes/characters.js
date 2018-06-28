@@ -55,21 +55,6 @@ router.post('/', (req, res) => {
     })
 })
 
-// DELETE CHARACTER
-// router.delete('/', (req, res) => {
-//   const newChar = new CharacterModel(req.body)
-//   newChar.save()
-//     .then((character) => {
-//       UserModel.findById(req.params.userId)
-//         .then((user) => {
-//           user.characters.push(newChar)
-//           return user.save()
-//             .then((newStateOfUser) => {
-//               res.send({ newStateOfUser })
-//             })
-//         })
-//     })
-// })
 router.delete('/:characterId', (req, res) => {
   UserModel.findById(req.params.userId)
   .then((user) => {
@@ -80,32 +65,5 @@ router.delete('/:characterId', (req, res) => {
     res.send({user: savedUser})
   })
 })
-// newUser.save().then((user) => {
-//   res.send({ user })
-// }).catch((err) => res.send(err))
 
-// // UPDATE USER
-// router.patch('/:id', (req, res) => {
-//   console.log(`The current User: ---${req.params.id}--- is being altered`)
-//   UserModel.findByIdAndUpdate(req.params.id)
-//   .then((editedUser) => {
-//     editedUser.username = req.body.username
-//     editedUser.email = req.body.email
-//     editedUser.password = req.body.password
-//     editedUser.image = req.body.image
-//     return editedUser.save()
-//   }).then((newStateOfUsers) => {
-//     res.send(newStateOfUsers)
-//   })
-// })
-
-// // DELETE USER
-// router.delete('/:id', (req, res) => {
-//   UserModel.findByIdAndRemove(req.params.id)
-//   .then((user) => {
-//     return user.save()
-//   }).then((newStateOfUsers) => {
-//     res.send(newStateOfUsers)
-//   })
-// })
 module.exports = router

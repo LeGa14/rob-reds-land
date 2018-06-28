@@ -3,6 +3,14 @@ var router = express.Router();
 
 const { UserModel } = require('../db/schema')
 
+// API Component
+// router.get('/', (req, res) => {
+//   User.find().then(users => {
+//     res.json(users)
+//   })
+//   .catch((err) => console.log(err))
+// })
+
 /* INDEX users listing. */
 router.get('/', (req, res) => {
   UserModel.find().then((users) => {
