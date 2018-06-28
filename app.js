@@ -19,6 +19,7 @@ connection.on('error', (err) => {
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
 const charactersRouter = require('./routes/characters')
+const cardsRouter = require('./routes/cards')
 
 const app = express()
 
@@ -34,5 +35,6 @@ app.get('/', (req, res) => {
 
 app.use('/api/users', usersRouter)
 app.use('/api/users/:userId/characters', charactersRouter)
+app.use('/api/users/:userId/cards', cardsRouter)
 
 module.exports = app

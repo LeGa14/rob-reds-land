@@ -14,8 +14,7 @@ router.get('/', (req, res) => {
 
 // SHOW a single USER
 router.get('/:userId', (req, res) => {
-  const user = UserModel.findById(req.params.userId).then((user) => {
-
+  UserModel.findById(req.params.userId).then((user) => {
     res.send({
       user
     })

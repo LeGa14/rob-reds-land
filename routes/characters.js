@@ -29,9 +29,9 @@ router.get('/', (req, res) => {
 
 // SHOW a single CHARACTER
 router.get('/:characterId', (req, res) => {
-  const user = UserModel.findById(req.params.userId)
+  // const user = 
+  UserModel.findById(req.params.userId)
     .then((user) => {
-      user = user
       foundCharacter = user.characters.id(req.params.characterId)
       res.send({
         foundCharacter
@@ -55,6 +55,31 @@ router.post('/', (req, res) => {
     })
 })
 
+// DELETE CHARACTER
+// router.delete('/', (req, res) => {
+//   const newChar = new CharacterModel(req.body)
+//   newChar.save()
+//     .then((character) => {
+//       UserModel.findById(req.params.userId)
+//         .then((user) => {
+//           user.characters.push(newChar)
+//           return user.save()
+//             .then((newStateOfUser) => {
+//               res.send({ newStateOfUser })
+//             })
+//         })
+//     })
+// })
+router.delete('/:characterId', (req, res) => {
+  UserModel.findById(req.params.userId)
+  .then((user) => {
+    user.characters.id(req.params.characterId).remove()
+    return user.save()
+  })
+  .then((savedUser) => {
+    res.send({user: savedUser})
+  })
+})
 // newUser.save().then((user) => {
 //   res.send({ user })
 // }).catch((err) => res.send(err))
