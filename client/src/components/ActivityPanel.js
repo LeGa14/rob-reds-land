@@ -7,20 +7,31 @@ import LogIn from './ActivityPanel/LogIn'
 import User from './ActivityPanel/User'
 import Game from './ActivityPanel/Game'
 
+// class ActivityPanel extends Component {
+//     render() {
+//         return (
+//             <Router>
+//                 <div className="component">
+//                     <h2>Hello from the ActivityPanel Component</h2>
+//                 </div>
+//             </Router>
+//         )
+//     }
+// }
 class ActivityPanel extends Component {
     render() {
         return (
             <Router>
                 <div className="component">
                     <h2>Hello from the ActivityPanel Component</h2>
-                    <Switch>
-                        <Route exact path='/splash' component={SplashScreen}/>
-                        <Route exact path='/about' component={About}/>
-                        <Route exact path='/login' component={LogIn}/>
-                        <Route exact path='/user' component={User}/>
-                        <Route exact path='/game' component={Game}/>
-                    </Switch>
                 </div>
+                <Switch>
+                    <Route exact path='/splash' render={SplashScreen} />
+                    <Route exact path='/about' render={About} />
+                    <Route exact path='/login' render={LogIn} />
+                    <Route exact path='/user' render={User} />
+                    <Route exact path='/game' render={Game} />
+                </Switch>
             </Router>
         )
     }

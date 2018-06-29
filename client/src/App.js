@@ -27,11 +27,11 @@ class App extends Component {
           <NavigationBar />
           <ActivityPanel>
             <Switch>
-              <Route exact path='/splash' component={SplashScreen} />
-              <Route exact path='/about' component={About} />
-              <Route exact path='/login' component={LogIn} />
-              <Route exact path='/user' component={User} />
-              <Route exact path='/game' component={Game} />
+              <Route exact path='/splash' render={SplashScreen} />
+              <Route exact path='/about' render={About} />
+              <Route exact path='/login' render={LogIn} />
+              <Route exact path='/user' render={User} />
+              <Route exact path='/game' render={Game} />
             </Switch>
           </ActivityPanel>
         </ComponentMarker>
