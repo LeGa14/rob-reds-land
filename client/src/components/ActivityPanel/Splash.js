@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class SplashScreen extends Component {
+class Splash extends Component {
     render() {
         return(
             <div className="component">
@@ -10,4 +10,4 @@ class SplashScreen extends Component {
     }
 }
 
-export default SplashScreen
+export default Splash

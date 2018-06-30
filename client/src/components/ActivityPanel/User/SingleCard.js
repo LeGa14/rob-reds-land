@@ -4,7 +4,7 @@ class SingleCard extends Component {
     render() {
         return(
             <div className="component">
-                <h5>Hello from a Single Character</h5>
+                <h5>Hello from a Single Card</h5>
             </div>
         )
     }
