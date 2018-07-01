@@ -5,7 +5,7 @@ import SingleCharacter from './SingleCharacter'
 class Characters extends Component {
     render() {
         return(
-            <div className="component">
+            <div className="component levelFour">
                 <h4>Hello from the Characters Component</h4>
                 <div>
                     <SingleCharacter />

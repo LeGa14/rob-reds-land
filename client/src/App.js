@@ -9,8 +9,46 @@ import ActivityPanel from './components/ActivityPanel'
 
 const ComponentMarker = styled.div`
 .component {
-  margin: 10px;
-  border: 1px solid purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: ;
+  margin: 1vw;
+  border: 1px solid blue;
+  width: 98vw;
+}
+.App{
+  width: 100vw;
+  height: 100vh
+}
+.parentLevel {
+  width: 98vw;
+  margin: 1vw;
+  color: darkblue;
+}
+.levelOne {
+  width: 98vw;
+  margin: 1vw;
+}
+.levelTwo {
+  width: 96vw;
+  margin: 1vw;
+  color: blue;
+}
+.levelThree {
+  width: 94vw;
+  margin: 1vw;
+  color: lightblue;
+}
+.levelFour {
+  width: 92vw;
+  margin: 1vw;
+  color: aqua;
+}
+.levelFive {
+  width: 90vw;
+  margin: 1vw;
+  color: green;
 }
 `
 
@@ -39,8 +77,8 @@ class App extends Component {
     return (
       <Router>
         <ComponentMarker className="App">
-          <NavigationBar />
-          <ActivityPanel />
+          <NavigationBar clasName="levelOne"/>
+          <ActivityPanel clasName="levelOne" />
         </ComponentMarker>
 
       </Router>

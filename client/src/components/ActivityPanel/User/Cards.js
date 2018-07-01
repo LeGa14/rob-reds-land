@@ -5,7 +5,7 @@ import SingleCard from './SingleCard'
 class Cards extends Component {
     render() {
         return(
-            <div className="component">
+            <div className="component levelFour">
                 <h4>Hello from the Cards Component</h4>
                 <div>
                     <SingleCard />

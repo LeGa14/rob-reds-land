@@ -9,22 +9,31 @@ const NavStructure = styled.div`
 div.NavParts {
     display: flex;
     flex-directions: column;
-    justify-content: space-between;
-    max-width: 30vw;
-}
+    justify-content: center;
+    margin: auto;
+    height: 28vh;
+    width: 98vw;
     
-div.NavComponents {
+}
+
+.NavComponents {
     display: flex;
     flex-direction: row;
-    justify-content: space between;
-    max-width:30vw;
+    justify-content: space-between;
+    align-content: space-between;
+    margin: auto;
+    width: 96vw;
+}
+.NavigationBar.component {
+    width: 98vw;
+    height: 28vh;
 }
 `
 
 class NavigationBar extends Component {
     render() {
         return (
-            <div className="NavigationBar component">
+            <div className="NavigationBar component parentLevel">
                 <NavStructure className="NavParts">
                     <h2>Hello from the NavigationBar Component</h2>
                     <div className="NavComponents">
