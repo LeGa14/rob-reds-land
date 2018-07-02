@@ -1,242 +1,34 @@
-# User Stories
-user has NO account
-    create a account
-user has account
-    delete account
-    play game
-        show character
-            character is at location
-                is location the end?
+# Rob Red's Land
 
-            character has inventory
-                money
-                items/weapons
-        show map
-            map has locations
-                start
-                in-between
-                end
-            map has inventory (loot)
-                money drops
-                item drops
+### Project 3 (wdi16)
 
-    view characters
-        view game progress
-        view inventory
+## Full MERN Stack Application
+
+### The project evaluated my ability to use React, Node with Express, and Mongo with Mongoose for the database
 
 
-User
-    play game
-        start game
-            chose character
-                game starts
+**About this project**:
+  - I developed an application that allows users to manage their their character and card inventory for a tading card game based on the video game series known as Borderlands.
+  - [ERD](https://imgur.com/4paTkIA): my ERD
+  - [Click here](https://rob-reds-land.herokuapp.com/) to see the Deployed App
+  - [Trello](https://trello.com/b/k0558L7u/project-3-rob-reds-land): a Trello Board that contains my user story management
+  - [Click here](https://www.figma.com/file/WG8ecyOY4z2ns4SlY4sCNoHc/Due-Point) to see the original mock-up of my project
+  - Technologies and libraries I used:
+    - I used **React.js, Node.js with Express, MongoDB, Mongoose** and all of the dependencies that each of those packages have
+    - I also used React Router and Styled Component packages
+  - In Version 2, I would like to add:
+    - User authentication
+    - Build on the the game aspect of the application.
+    - Progressive Web App features so the cards match to a specific character in possession of that card.
+    - A way for users to view the collections of flashcards with other users
 
-game
-    map
-        locations
-            enemies
-                class
-                health
-                    actual
-                    shield
-                items
-                    type
-                        box
-                            loot
-                        weapon
-                        ammo
+  - I used different syntax in places
+    - As I developed this app, I used various syntax to make sure I understood the variations. For example, in the same component or router, I used both .then and async/await versions of promises. **I understand this is not a good way to build production code**, but I wanted to use the project to improve my understanding of the syntax options. I have made comments in the code to explain my method.
 
-            items
-                weaopns
-                money
-                ammo
-                health Refill
-    user
-        charcter
-            class
-            health
-                actual
-                shield
-            items
-                weapons
-                ammo
-                money
+  - Major takeaways:
+    - **Mobile first should be considered intially**; I noticed that when I was building the application, I relied on the responsiveness to respond to the way a user might view it. Although responsive, the app might have been easier to build starting from a mobile perspective. A ctrading card is about the same size as a phone screen, if not smaller, which would make it a great candidate for a displaying a card database using an icon view for index, and full display for single showings.
 
-- item
-    - type: weapon, money, refill
-    - owner: player, enemy, board
+    - **Systems thinking is valuable**; This is an extension of the previous takeaway. The value of applying the models from basic systems thinking to the development of complex full-stack applications cannot be overstated. The entire app is just a series of feedback loops. Once I understood the cause and effect relationships between the individual elements of the system, I was able to isolate the points of leverage, and then I could select the most efficient solution to each problem. 
 
-
-
-User
-    username
-    password
-    email
-    characters
-
-- user
-    - username
-    - password
-    - email
-    - characters
-        - items
-    - 
-
-Win game
-    reached end
-
-lose game
-    didnt reach end
-    died
-
-User opens app
-    User needs account
-        User creates account            (CREATE/NEW) - C
-        User Logs in to account
-            User sees other users       (INDEX) - R
-            User deletes account        (DELETE) - D
-            User edits/updates account  (EDIT/UPDATE) - U
-            User sees account info      (SHOW) - R
-                # current games in progress
-                # number of characters
-                # number of cards colleceted
-
-            User starts game
-                User views characters               (INDEX) - R
-                    User selects Character
-                    User views single Chararcter    (SHOW) - R
-                        User views Character stats
-                            name
-                            class
-                            health
-                            current game
-                            deaths
-                        User views character inventory
-                            money
-                            weapons
-                            ammunition
-                            *shield
-                            perks
-                    User deletes single character   (DELETE) - D
-                        User chooses how to handle Character's inventory
-                            User sells inventory for cash
-                            User stores in inventory in bank universal to all their characters
-                        User choses what to do with Character's money
-                            User gives money to other characters
-                            User stores amount in personal bank
-                    User creates new character      (CREATE/NEW) - C
-                        User selects Character class
-                        User gives Charcter name
-                            User submit Character creation
-                    
-                    
-characters
-    Soldier
-        Axton
-        Roland
-        Athena
-    Berserker
-        Salvador
-        Brick
-        Wilhelm
-    Siren
-        Maya
-        Lilith
-        Nisha
-    Hunter
-        Zer0
-        Mordecai
-        Claptrap
-    Bonus
-        Gaige
-        Krieg
-        Doppleganger Jack
-        Lady Hammerlock
-        Rhys
-        Fiona
-        Handsome Jack
-        Angel (Siren)
-        Commandant Steele
-        Colonel Zarpedon
-
-Assistance Cards
-    Pre-game
-        Tiny Tina
-            rpg range
-    In-game ONLY
-        Nurse Nina
-            Health
-        Marcus
-            ammuntion
-        Dr.Zed
-            Shield
-        Mr Torgue
-            grenade expand
-        Moxxi
-            passive boosts
-        Ellie
-            movement
-        Scooter
-            movement
-        Sir Hammerlock
-        TK Baha
-        Patricia Tannis
-            vault key
-        Pickle
-    Non-game
-        Crazy Earl
-            eridium
-        Janey Springs
-            weapon trade
-
-User
-    username: string
-    email: string
-    password: string
-    image: sting
-    Character
-        user:  string
-        class: string
-        name: string
-        health: number
-        cash: number
-        *eridium: number
-        deployed: boolean
-        image: string
-    Cards
-        type: "cash/weapon/assistance"
-        image: string
-        holder: Character/Bank
-
-Board:
-    spaces:
-
-    start:
-    end:
-
-
-User plays game
-    User needs account
-        login to account
-            send email or username
-            send password
-        create account
-            submit username
-            submit email
-            submit password
-
-
-I'm trying to seed my database. The code appears correct, but there might be a syntax error somewhere. The terminal tells me I have an invalid schema. idk. I want to check the legitimacy of the way to import models from another file. I WILL SEED!!!
-
-I seeded the database thnks to spotting an error 
-
-I'm still working on the back-end. I managed to get the correct functionality for the Character Model's show and index routes
-
-Back-end completed!!!
-All necessary routes have been coded and tested for all 3 models. More models may make their way into the equation and different relationships may be established, but... we'll cross that bridge when we come to it.
-
-Next, I wanna set up the user experience in terms of component structure. I figure I'll do that from "in-media-res" format as opposed to a top-down or bottom-up approach. 
-
---Go back to styling the navBar.
---Establish Links within the NavBar
---
+    - **Reviewing previous takeaways**; Functionality should be planned instead of improvised upon building. Not being thourough enough with planning the basic user experience, the overall goal of a project can become forgotten easily by geting lost in unecessary concerns and fetaures.
+    
