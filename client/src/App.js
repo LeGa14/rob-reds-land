@@ -18,19 +18,33 @@ const ComponentMarker = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-image: url("http://getdrawings.com/image/wave-pattern-drawing-51.jpg");
   width: ;
   margin: 1vw;
-  border: 1px solid black;
+  border: 2px solid black;
   width: 98vw;
 }
 .component:hover {
-  border: 3px solid red;
+  border: 3px solid navy;
+}
+button {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid black;
+}
+button:hover {
+  color: red;
+  border: 2px blue rgb(0, 0, 255);
+  background-color: rgba(0, 0, 255, 0.6);
+}
+input:hover {
+ border: 2px solid goldenrod;
 }
 .App{
   width: 100vw;
   height: 100vh
 }
 .parentLevel {
+  background-image: url("https://newevolutiondesigns.com/images/freebies/grunge-wallpaper-1.jpg");
   width: 98vw;
   margin: 1vw;
   color: navy;
@@ -40,6 +54,7 @@ const ComponentMarker = styled.div`
   margin: 1vw;
 }
 .levelTwo {
+  background-image: url("https://cdn.shopify.com/s/files/1/0070/0943/5706/products/Tile-Grunge-Blue_1000x1000_6c165147-1751-4730-96b1-536c2e96b583_2000x.jpg?v=1527215600");
   width: 96vw;
   margin: auto;
   color: blue;
@@ -60,6 +75,10 @@ const ComponentMarker = styled.div`
   margin: auto;
   color: teal;
 }
+img {
+  height: 100px;
+  width: 100px;
+}
 `
 
 class App extends Component {
@@ -72,7 +91,7 @@ class App extends Component {
     currentUser: "",
     models: ['users', 'characters', 'cards'],
     app: {
-      logo: "http://awesomexstitch.com/blog/wp-content/uploads/2016/01/borderlands-large.jpg",
+      logo: "https://vignette.wikia.nocookie.net/borderlands/images/4/42/Vault_logo.png/revision/latest?cb=20100114181536",
       title: "Rob Red's Land"
     }
   }
@@ -88,7 +107,7 @@ class App extends Component {
     // let loggeInStatus = currentSession.loggedIn
     // console.log(!this.state.loggedIn)
     console.log(`You were logged ${!this.state.loggedIn ? 'OUT' : 'IN'} now.`)
-    this.setState({loggedIn: !this.state.loggedIn})
+    this.setState({ loggedIn: !this.state.loggedIn })
     console.log(`Now, you're logged ${!this.state.loggedIn ? 'IN' : 'OUT'}.`)
   }
 
@@ -97,18 +116,20 @@ class App extends Component {
     return (
       <Router>
         <ComponentMarker className="App">
-        <input 
-        type="button" 
-        value={this.state.loggedIn ? 'Log Out' : 'Log In'} 
-        onClick={this.loginHandle.bind(this)}/>
-          <NavigationBar 
-          className="levelOne" 
-          users={this.state.users}
-          currentSession={this.state} />
-          <ActivityPanel 
-          className="levelOne" 
-          users={this.state.users}
-          currentSession={this.state} />
+          <input
+            type="button"
+            value={this.state.loggedIn ? 'Log Out' : 'Log In'}
+            onClick={this.loginHandle.bind(this)} />
+          <NavigationBar
+            className="levelOne"
+            users={this.state.users}
+            currentSession={this.state}
+            appLogo={this.state.app.logo}
+            appTitle={this.state.app.title} />
+          <ActivityPanel
+            className="levelOne"
+            users={this.state.users}
+            currentSession={this.state} />
         </ComponentMarker>
 
       </Router>

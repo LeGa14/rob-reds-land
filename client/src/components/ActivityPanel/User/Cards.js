@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import styled from 'styled-components'
 
 import SingleCard from './SingleCard'
@@ -21,6 +21,7 @@ class Cards extends Component {
             <div className="component levelFour">
                 <h4>Hello from the Cards Component</h4>
                 <Link to='/cards/new'><button>Add New Card</button></Link>
+                <Route exact path='/user/:userId/characters/new' component={NewCard}/>
                 <CardIndex className="cardContainer">
                     <SingleCard />
                     <SingleCard />

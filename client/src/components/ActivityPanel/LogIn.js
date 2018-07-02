@@ -31,8 +31,13 @@ class LogIn extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        (event.target.name === "username" ? console.log("GOOD") : console.log("BAD"))
-}
+        console.log(this.state.username)
+        console.log("password is: ", this.state.password)
+        axios.post('/api/users', this.state).then(res => {
+            this.props.history.push(`/users/${res.data._id}`)
+        })
+        console.log(this.state)
+    }
 
     render() {
         return (

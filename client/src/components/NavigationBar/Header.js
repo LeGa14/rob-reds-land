@@ -4,8 +4,7 @@ class Header extends Component {
     render() {
         return(
             <div className="component levelTwo">
-                <img src={this.props.logo} />
-                <h3>Hello from the NavBar's Header Component</h3>
+                <img src={this.props.appLogo} alt={this.props.appTitle}/>
             </div>
         )
     }

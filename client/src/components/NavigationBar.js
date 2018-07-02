@@ -27,6 +27,7 @@ const NavStructure = styled.div`
 .NavigationBar {
     width: 98vw;
     height: 28vh;
+    color: yellow;
 }
 img {
     height: 5vh;
@@ -38,10 +39,10 @@ class NavigationBar extends Component {
         return (
             <div className="NavigationBar component parentLevel" >
                 <NavStructure className="NavParts">
-                    <h2>Hello from the NavigationBar Component</h2>
+                    <h2>Welcome to the Borderlands</h2>
+                    <h1> Are you ready to Rob Red's Land</h1>
                     <div className="NavComponents">
-                        <img src={this.props.logo} className=""/>
-                        <Header />
+                        <Header appLogo={this.props.appLogo}/>
                         <Links />
                         <UserStatus />
                     </div>

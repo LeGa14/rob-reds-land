@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 
 import SingleCharacter from './SingleCharacter'
 import NewCharacter from './NewCharacter'
@@ -9,13 +9,15 @@ class Characters extends Component {
         return(
             <div className="component levelFour">
                 <h4>Hello from the Characters Component</h4>
-                <Link to='/characters/new'><button>Create New Character</button></Link>
-                <div>
+                <Link to='/user/:userId/characters/new'><button>Create New Character</button></Link>
+                <Route path="/user/:userId/characters/new" component={NewCharacter}/>
+                <Route path="/user/:userId/characters/one" component={SingleCharacter}/>
+                <Route path="/user/:userId/characters">
                     <SingleCharacter />
                     <SingleCharacter />
                     <SingleCharacter />
                     <SingleCharacter />
-                </div>
+                </Route>
             </div>
         )
     }
