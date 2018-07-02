@@ -4,9 +4,10 @@ import styled from 'styled-components'
 
 const LinkButton = styled.div`
 button {
-    width: 4vw;
-    margin: 1vw;
-    display: flex;
+    width: 6vw;
+    height: 5vh
+    margin: auto;
+    display: inline-grid;
     flex-direction: row;
     justify-content: center;
     // flex-wrap: wrap;
@@ -26,11 +27,11 @@ class Links extends Component {
             <LinkButton className="component levelTwo">
                 <h3>Hello from the NavBar's Links Component</h3>
                 <div className="NavLinks">
-                    <button><Link to="/">START Screen</Link></button>
-                    <button><Link to="/about">About</Link></button>
-                    <button><Link to="/login">Login</Link></button>
-                    <button><Link to="/user">User</Link></button>
-                    <button><Link to="/game">Game</Link></button>
+                    <Link to="/"><button>START Screen</button></Link>
+                    <Link to="/about"><button>About</button></Link>
+                    <Link to="/login"><button>Login</button></Link>
+                    <Link to="/user"><button>User</button></Link>
+                    <Link to="/game"><button>Game</button></Link>
                 </div>
             </LinkButton>
         )

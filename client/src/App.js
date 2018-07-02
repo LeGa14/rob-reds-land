@@ -17,6 +17,9 @@ const ComponentMarker = styled.div`
   border: 1px solid black;
   width: 98vw;
 }
+.component:hover {
+  border: 3px solid red;
+}
 .App{
   width: 100vw;
   height: 100vh
@@ -50,9 +53,6 @@ const ComponentMarker = styled.div`
   width: 90vw;
   margin: auto;
   color: teal;
-}
-.actComp {
-
 }
 `
 

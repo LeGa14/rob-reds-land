@@ -10,7 +10,7 @@ class Splash extends Component {
         const nextPage = currentUser ? "/game" : "/entry"
 
         return (
-            <div className="component mainWindow">
+            <div className="component mainWindow levelTwo">
                 <h3>Hello from the Splash Screen</h3>
                 <div className="splashContent">
                     <Link to={nextPage}><button>START</button></Link>

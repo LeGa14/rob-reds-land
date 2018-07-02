@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const LoginStyle = styled.div`
 form {
@@ -15,6 +16,11 @@ form {
 `
 
 class LogIn extends Component {
+state = {
+    username: "",
+    password: ""
+}
+
     render() {
         return (
             <LoginStyle className="component levelTwo actComp">
@@ -37,7 +43,7 @@ class LogIn extends Component {
                     </div>
                     <div className="userAction">
 
-                        <button>Login</button>
+                        <button type="submit">Login</button>
                         <Link to="/signup"><button>SignUp</button></Link>
                     </div>
                 </form>
