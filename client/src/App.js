@@ -18,21 +18,22 @@ const ComponentMarker = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-image: url("http://getdrawings.com/image/wave-pattern-drawing-51.jpg");
+  background-image: url("https://cdn.shopify.com/s/files/1/0070/0943/5706/products/Tile-Grunge-Blue_1000x1000_6c165147-1751-4730-96b1-536c2e96b583_2000x.jpg?v=1527215600");
   width: ;
   margin: 1vw;
   border: 2px solid black;
   width: 98vw;
 }
 .component:hover {
-  border: 3px solid navy;
+  border: 3px solid yellow;
 }
 button {
   background-color: rgba(255, 255, 255, 0.3);
   border: 2px solid black;
+  color: white
 }
 button:hover {
-  color: red;
+  color: pink;
   border: 2px blue rgb(0, 0, 255);
   background-color: rgba(0, 0, 255, 0.6);
 }
@@ -47,7 +48,7 @@ input:hover {
   background-image: url("https://newevolutiondesigns.com/images/freebies/grunge-wallpaper-1.jpg");
   width: 98vw;
   margin: 1vw;
-  color: navy;
+  color: white;
 }
 .levelOne {
   width: 98vw;
@@ -57,23 +58,23 @@ input:hover {
   background-image: url("https://cdn.shopify.com/s/files/1/0070/0943/5706/products/Tile-Grunge-Blue_1000x1000_6c165147-1751-4730-96b1-536c2e96b583_2000x.jpg?v=1527215600");
   width: 96vw;
   margin: auto;
-  color: blue;
+  color: white;
   display: inline-grid;
 }
 .levelThree {
   width: 94vw;
   margin: 1vw;
-  color: aqua;
+  color: white;
 }
 .levelFour {
   width: 92vw;
   margin: 1vw;
-  color: lime;
+  color: white;
 }
 .levelFive {
   width: 90vw;
   margin: auto;
-  color: teal;
+  color: white;
 }
 img {
   height: 100px;
