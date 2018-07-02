@@ -14,7 +14,7 @@ const ComponentMarker = styled.div`
   justify-content: space-around;
   width: ;
   margin: 1vw;
-  border: 1px solid blue;
+  border: 1px solid black;
   width: 98vw;
 }
 .App{
@@ -24,7 +24,7 @@ const ComponentMarker = styled.div`
 .parentLevel {
   width: 98vw;
   margin: 1vw;
-  color: darkblue;
+  color: navy;
 }
 .levelOne {
   width: 98vw;
@@ -32,23 +32,27 @@ const ComponentMarker = styled.div`
 }
 .levelTwo {
   width: 96vw;
-  margin: 1vw;
+  margin: auto;
   color: blue;
+  display: inline-grid;
 }
 .levelThree {
   width: 94vw;
   margin: 1vw;
-  color: lightblue;
+  color: aqua;
 }
 .levelFour {
   width: 92vw;
   margin: 1vw;
-  color: aqua;
+  color: lime;
 }
 .levelFive {
   width: 90vw;
-  margin: 1vw;
-  color: green;
+  margin: auto;
+  color: teal;
+}
+.actComp {
+
 }
 `
 
@@ -58,27 +62,31 @@ class App extends Component {
     characters: [],
     cards: [],
 
-    currentUser: {},
-    models: ['users', 'characters', 'cards']
+    currentSession: {
+      user: {username: ""},
+      character: {}
+    },
+    models: ['users', 'characters', 'cards'],
+    app: {
+      logo: "http://awesomexstitch.com/blog/wp-content/uploads/2016/01/borderlands-large.jpg",
+      title: "Rob Red's Land"
+    }
   }
 
   componentDidMount() {
     axios.get('/api/users').then((res) => {
-      console.log('your database looks like...')
       this.setState({ users: res.data.users })
-      console.log(res.data.users.length)
-      console.log(`the ${this.state.users.length}-user database is in the state.`)
-      console.log('state: ', this.state)
-      console.log(res.data)
+      console.log(this.state)
     })
   }
 
   render() {
+
     return (
       <Router>
         <ComponentMarker className="App">
-          <NavigationBar clasName="levelOne"/>
-          <ActivityPanel clasName="levelOne" />
+          <NavigationBar clasName="levelOne" users={this.state.users} />
+          <ActivityPanel clasName="levelOne" users={this.state.users} currentSession={this.state.currentSession} />
         </ComponentMarker>
 
       </Router>

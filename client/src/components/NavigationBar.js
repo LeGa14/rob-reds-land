@@ -6,9 +6,9 @@ import UserStatus from './NavigationBar/UserStatus'
 import Links from './NavigationBar/Links'
 
 const NavStructure = styled.div`
-div.NavParts {
+.NavParts {
     display: flex;
-    flex-directions: column;
+    flex-direction: column;
     justify-content: center;
     margin: auto;
     height: 28vh;
@@ -24,19 +24,23 @@ div.NavParts {
     margin: auto;
     width: 96vw;
 }
-.NavigationBar.component {
+.NavigationBar {
     width: 98vw;
     height: 28vh;
+}
+img {
+    height: 5vh;
 }
 `
 
 class NavigationBar extends Component {
     render() {
         return (
-            <div className="NavigationBar component parentLevel">
+            <div className="NavigationBar component parentLevel" >
                 <NavStructure className="NavParts">
                     <h2>Hello from the NavigationBar Component</h2>
                     <div className="NavComponents">
+                        <img src={this.props.logo} className=""/>
                         <Header />
                         <Links />
                         <UserStatus />

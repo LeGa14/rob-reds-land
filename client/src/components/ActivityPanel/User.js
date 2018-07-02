@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 import Characters from './User/Characters'
 import Cards from './User/Cards'
 import UserInfo from './User/UserInfo'
+
+const UserStyle = styled.div`
+.levelFive {
+    width: 88vw;
+
+}
+`
 
 class User extends Component {
     render() {
@@ -31,7 +39,7 @@ class User extends Component {
             })
         })
         return (
-            <div className="component levelThree">
+            <UserStyle className="component levelThree">
                 <h3>Hello from the User Component</h3>
                 <Link to='/user/userInfo'>Info</Link>
                 <Link to='/user/characters'>Characters</Link>
@@ -40,7 +48,7 @@ class User extends Component {
                 <Route exact path='/user/userInfo' component={UserInfo} />
                 <Route exact path='/user/characters' component={Characters} />
                 <Route exact path='/user/cards' component={Cards} />
-            </div>
+            </UserStyle>
         )
     }
 }
