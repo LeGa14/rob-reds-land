@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-<<<<<<< HEAD
-=======
 import styled from 'styled-components'
 
 const LinkButton = styled.div`
@@ -22,19 +20,12 @@ button {
 
 }
 `
->>>>>>> imr-changes
 
 class Links extends Component {
     render() {
         return (
             <LinkButton className="component levelTwo">
                 <h3>Hello from the NavBar's Links Component</h3>
-<<<<<<< HEAD
-                <Link to='/about'>About</Link> | 
-                <Link to='/login'>Login</Link> | 
-                <Link to='/user'>User Info</Link> | 
-            </div>
-=======
                 <div className="NavLinks">
                     <Link to="/"><button>START Screen</button></Link>
                     <Link to="/about"><button>About</button></Link>
@@ -43,7 +34,6 @@ class Links extends Component {
                     <Link to="/game"><button>Game</button></Link>
                 </div>
             </LinkButton>
->>>>>>> imr-changes
         )
     }
 }

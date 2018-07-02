@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
-=======
 import { Route } from 'react-router-dom'
 import styled from 'styled-components'
->>>>>>> imr-changes
 
 import Splash from './ActivityPanel/Splash'
 import About from './ActivityPanel/About'
@@ -110,20 +106,6 @@ class ActivityPanel extends Component {
         )
 
         return (
-<<<<<<< HEAD
-            <Router>
-                <div className="component">
-                    <h2>Hello from the ActivityPanel Component</h2>
-                </div>
-                <Switch>
-                    <Route exact path='/splash' render={SplashScreen} />
-                    <Route exact path='/about' render={About} />
-                    <Route exact path='/login' render={LogIn} />
-                    <Route exact path='/user' render={User} />
-                    <Route exact path='/game' render={Game} />
-                </Switch>
-            </Router>
-=======
             <div>
                 <SplashScreen className="component parentLevel">
                     <h2>Hello from the ActivityPanel Component</h2>
@@ -138,7 +120,6 @@ class ActivityPanel extends Component {
                     </div>
                 </SplashScreen>
             </div>
->>>>>>> imr-changes
         )
     }
 }
