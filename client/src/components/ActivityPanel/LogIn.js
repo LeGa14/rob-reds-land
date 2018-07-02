@@ -16,16 +16,29 @@ form {
 `
 
 class LogIn extends Component {
-state = {
-    username: "",
-    password: ""
+    state = {
+        username: "",
+        password: ""
+    }
+    handleChange = (event) => {
+        const inputName = event.target.name
+        const userInput = event.target.value
+        const newState = { ...this.state }
+        newState[inputName] = userInput
+        this.setState(newState)
+
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        (event.target.name === "username" ? console.log("GOOD") : console.log("BAD"))
 }
 
     render() {
         return (
             <LoginStyle className="component levelTwo actComp">
                 <h1>Login</h1>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div className="loginInput">
 
                         <p>Username: </p>
@@ -33,12 +46,16 @@ state = {
                             placeholder="Username"
                             type="text"
                             name="username"
+                            value={this.state.username}
+                            onChange={this.handleChange}
                         />
                         <p>Password: </p>
                         <input
                             placeholder="Password"
                             type="password"
                             name="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
                         />
                     </div>
                     <div className="userAction">

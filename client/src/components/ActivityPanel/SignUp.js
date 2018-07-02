@@ -67,7 +67,7 @@ class SignUp extends Component {
                     </div>
                     <div className="userAction">
 
-                        <button type="submit">SignUp</button>
+                        <button type="submit" to='/game'>SignUp</button>
                     </div>
                 </form>
             </div>

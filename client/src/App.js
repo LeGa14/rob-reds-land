@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import styled from 'styled-components'
 import axios from 'axios'
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Switch, Route, Redirect } from 'react-router-dom'
 
 import NavigationBar from './components/NavigationBar'
 import ActivityPanel from './components/ActivityPanel'
@@ -62,10 +62,8 @@ class App extends Component {
     characters: [],
     cards: [],
 
-    currentSession: {
-      user: {username: ""},
-      character: {}
-    },
+    loggedIn: false,
+    currentUser: "",
     models: ['users', 'characters', 'cards'],
     app: {
       logo: "http://awesomexstitch.com/blog/wp-content/uploads/2016/01/borderlands-large.jpg",
@@ -80,13 +78,31 @@ class App extends Component {
     })
   }
 
+  loginHandle = () => {
+    // let loggeInStatus = currentSession.loggedIn
+    // console.log(!this.state.loggedIn)
+    console.log(`You were logged ${!this.state.loggedIn ? 'OUT' : 'IN'} now.`)
+    this.setState({loggedIn: !this.state.loggedIn})
+    console.log(`Now, you're logged ${!this.state.loggedIn ? 'IN' : 'OUT'}.`)
+  }
+
   render() {
 
     return (
       <Router>
         <ComponentMarker className="App">
-          <NavigationBar clasName="levelOne" users={this.state.users} />
-          <ActivityPanel clasName="levelOne" users={this.state.users} currentSession={this.state.currentSession} />
+        <input 
+        type="button" 
+        value={this.state.loggedIn ? 'Log Out' : 'Log In'} 
+        onClick={this.loginHandle.bind(this)}/>
+          <NavigationBar 
+          className="levelOne" 
+          users={this.state.users}
+          currentSession={this.state} />
+          <ActivityPanel 
+          className="levelOne" 
+          users={this.state.users}
+          currentSession={this.state} />
         </ComponentMarker>
 
       </Router>

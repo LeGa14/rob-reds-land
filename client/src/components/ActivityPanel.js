@@ -49,24 +49,39 @@ input {
 `
 
 class ActivityPanel extends Component {
-    state = {}
+    state = {
+        loggedIn: this.props.currentSession.loggedIn,
+        currentUser: this.props.currentSession.currentUser,
+    }
 
     render() {
 
         const SplashWrapper = (props) => (
-            <Splash currentUser={this.props.currentSession.user} {...props} />
+            <Splash currentUser={this.props} {...props} />
         )
         const SignUpWrapper = (props) => (
-            <SignUp users={this.state.users} {...props} />
+            <SignUp 
+            users={this.state.users} {...props} 
+            currentUser={this.props}
+            />
         )
         const LogInWrapper = (props) => (
-            <LogIn users={this.state.users} {...props} />
+            <LogIn 
+            users={this.state.users} {...props} 
+            currentUser={this.props}
+            />
         )
         const GameWrapper = (props) => (
-            <Game users={this.state.users} {...props} />
+            <Game 
+            users={this.state.users} {...props} 
+            currentUser={this.props}
+            />
         )
         const UserWrapper = (props) => (
-            <User users={this.state.users} {...props} />
+            <User 
+            users={this.state.users} {...props} 
+            currentUser={this.props}
+            />
         )
         const usingUsers = ['LogIn', 'Game', 'Users']
 

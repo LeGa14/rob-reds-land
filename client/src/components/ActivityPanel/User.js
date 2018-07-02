@@ -41,13 +41,13 @@ class User extends Component {
         return (
             <UserStyle className="component levelThree">
                 <h3>Hello from the User Component</h3>
-                <Link to='/user/userInfo'>Info</Link>
-                <Link to='/user/characters'>Characters</Link>
-                <Link to='/user/cards'>Cards</Link>
+                <Link to='/user/:userId/userInfo'>Info</Link>
+                <Link to='/user/:userId/characters'>Characters</Link>
+                <Link to='/user/:userId/cards'>Cards</Link>
                 <hr />
-                <Route exact path='/user/userInfo' component={UserInfo} />
-                <Route exact path='/user/characters' component={Characters} />
-                <Route exact path='/user/cards' component={Cards} />
+                <Route exact path='/user/:userId/userInfo' component={UserInfo} />
+                <Route exact path='/user/:userId/characters' component={Characters} />
+                <Route exact path='/user/:userId/cards' component={Cards} />
             </UserStyle>
         )
     }
