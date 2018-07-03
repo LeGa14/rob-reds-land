@@ -4,6 +4,8 @@ import { Link, Route } from 'react-router-dom'
 import SingleCharacter from './SingleCharacter'
 import NewCharacter from './NewCharacter'
 
+const GroupedChar = 
+
 class Characters extends Component {
     render() {
         return(
@@ -12,7 +14,7 @@ class Characters extends Component {
                 <Link to='/user/:userId/characters/new'><button>Create New Character</button></Link>
                 <Route path="/user/:userId/characters/new" component={NewCharacter}/>
                 <Route path="/user/:userId/characters/one" component={SingleCharacter}/>
-                <Route path="/user/:userId/characters">
+                <Route path="/user/:userId/characters" component={GroupedChar}>
                     <SingleCharacter />
                     <SingleCharacter />
                     <SingleCharacter />

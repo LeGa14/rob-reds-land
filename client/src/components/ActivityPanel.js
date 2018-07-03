@@ -24,8 +24,8 @@ div.mainWindow {
     height: 66vh;
 }
 button {
-    height: 3vh;
-    width: 23vw;
+    height: 5vh;
+    width: 25vw;
     margin: auto
 }
 form {

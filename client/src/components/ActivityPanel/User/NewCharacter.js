@@ -11,7 +11,7 @@ const NewChar = styled.div`
      margin: auto;
  }
  button {
-     margin: 1vw;
+     margin: 1vh;
      color: aqua;
      background: red;
      border: 1px solid black;
